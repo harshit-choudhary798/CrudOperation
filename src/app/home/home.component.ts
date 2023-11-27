@@ -3,6 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { DetailsService } from '../details-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UserFormComponent } from '../user-form/user-form.component';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([]);
 
-  constructor(private details: DetailsService) {}
+  constructor(private details: DetailsService,private dialog:MatDialog) {}
 
   ngOnInit(): void {
     this.details.getData().subscribe(
@@ -57,6 +59,10 @@ export class HomeComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+
+  add(){
+    this.dialog.open(UserFormComponent)
+  }
 
   update(element: any) {
     alert(JSON.stringify(element));
