@@ -1,8 +1,18 @@
 <div>
+    <div style="display: flex;justify-content: space-around;">
+
+  
     <mat-form-field >
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input> 
     </mat-form-field>
+
+    <button mat-icon-button color="primary" style="position: relative; ">
+        <mat-icon>edit</mat-icon>
+        <span>Add User</span>
+      </button>
+      
+    </div>
 
     <mat-table [dataSource]="dataSource" >
 
@@ -36,7 +46,7 @@
     <ng-container matColumnDef="update">
         <mat-header-cell *matHeaderCellDef style="color: white;">Update</mat-header-cell>
         <mat-cell *matCellDef="let element" class="right-align">
-          <button mat-icon-button color="accent">
+          <button mat-icon-button color="accent" (click)="update(element)">
             <mat-icon>update</mat-icon>
           </button>
         </mat-cell>
@@ -45,7 +55,7 @@
       <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef style="color: white;">Delete</mat-header-cell>
         <mat-cell *matCellDef="let element" class="right-align">
-          <button mat-icon-button color="warn" >
+          <button mat-icon-button color="warn"  (click)="delete(element)">
             <mat-icon class="mat-18">delete</mat-icon>
           </button>
         </mat-cell>
