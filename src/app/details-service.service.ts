@@ -9,6 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class DetailsService {
   private apiUrl = ' http://localhost:3000/users';
+  addUser(form:any) {
+  return this.http.post(this.apiUrl,form)
+  }
+
 
   constructor(private http: HttpClient) {}
 

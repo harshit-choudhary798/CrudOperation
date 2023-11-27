@@ -61,8 +61,23 @@ export class HomeComponent implements OnInit {
 
 
   add(){
-    this.dialog.open(UserFormComponent)
+    const dialogRef = this.dialog.open(UserFormComponent)
+    dialogRef.afterClosed().subscribe((result:any) => {
+      if (result) {
+       
+        console.log('Dialog result:', result);
+
+        this.details.addUser(result)
+        
+      } else {
+        console.log('Dialog closed without result');
+      }
+  
+     
+      console.log('Dialog closed. Performing additional actions.');
+    });
   }
+  
 
   update(element: any) {
     alert(JSON.stringify(element));
