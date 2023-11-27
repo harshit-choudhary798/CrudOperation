@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "branch": "Engineering",
+      "city": "New York",
+      "phone": "555-1234"
+    },
+    {
+      "name": "Jane Smith",
+      "branch": "Marketing",
+      "city": "Los Angeles",
+      "phone": "555-5678"
+    },
+    {
+      "name": "Bob Johnson",
+      "branch": "Sales",
+      "city": "Chicago",
+      "phone": "555-9876"
+    },
+    {
+      "name": "Emma Davis",
+      "branch": "Human Resources",
+      "city": "San Francisco",
+      "phone": "555-4567"
+    },
+    {
+      "name": "Mike Wilson",
+      "branch": "Finance",
+      "city": "Houston",
+      "phone": "555-8765"
+    },
+    {
+      "name": "Sarah Brown",
+      "branch": "IT",
+      "city": "Seattle",
+      "phone": "555-2345"
+    },
+    {
+      "name": "Alex Turner",
+      "branch": "Operations",
+      "city": "Denver",
+      "phone": "555-7890"
+    },
+    {
+      "name": "Grace Taylor",
+      "branch": "Customer Service",
+      "city": "Miami",
+      "phone": "555-3456"
+    },
+    {
+      "name": "Jack Harris",
+      "branch": "Legal",
+      "city": "Boston",
+      "phone": "555-6543"
+    },
+    {
+      "name": "Olivia Miller",
+      "branch": "Research and Development",
+      "city": "Dallas",
+      "phone": "555-0123"
+    },
+    {
+      "name": "Ethan White",
+      "branch": "Public Relations",
+      "city": "Phoenix",
+      "phone": "555-7891"
+    },
+    {
+      "name": "Ava Turner",
+      "branch": "Quality Assurance",
+      "city": "Atlanta",
+      "phone": "555-2341"
+    },
+    {
+      "name": "Noah Garcia",
+      "branch": "Logistics",
+      "city": "Philadelphia",
+      "phone": "555-8910"
+    },
+    {
+      "name": "Sophia Reed",
+      "branch": "Education",
+      "city": "Detroit",
+      "phone": "555-1432"
+    },
+    {
+      "name": "Liam Martinez",
+      "branch": "Healthcare",
+      "city": "Minneapolis",
+      "phone": "555-1098"
+    },
+    {
+      "name": "Chloe Hall",
+      "branch": "Real Estate",
+      "city": "San Diego",
+      "phone": "555-7654"
+    },
+    {
+      "name": "Mia Brooks",
+      "branch": "Agriculture",
+      "city": "Portland",
+      "phone": "555-2109"
+    },
+    {
+      "name": "Jackson Young",
+      "branch": "Media",
+      "city": "Austin",
+      "phone": "555-6542"
+    },
+    {
+      "name": "Aiden Wood",
+      "branch": "Fashion",
+      "city": "Charlotte",
+      "phone": "555-9012"
+    },
+    {
+      "name": "Scarlett Nelson",
+      "branch": "Consulting",
+      "city": "Raleigh",
+      "phone": "555-4321"
+    }
+  ]
+}

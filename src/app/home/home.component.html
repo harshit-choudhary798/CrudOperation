@@ -1,0 +1,61 @@
+<div>
+    <mat-form-field >
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input> 
+    </mat-form-field>
+
+    <mat-table [dataSource]="dataSource" >
+
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef >Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+        </ng-container>
+  
+        <!-- Branch Column -->
+        <ng-container matColumnDef="branch">
+            <mat-header-cell *matHeaderCellDef>Branch</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.branch }}</mat-cell>
+        </ng-container>
+  
+        <!-- City Column -->
+        <ng-container matColumnDef="city">
+            <mat-header-cell  *matHeaderCellDef>City</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
+        </ng-container>
+  
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.phone }}</mat-cell>
+    </ng-container>
+
+
+    
+    <ng-container matColumnDef="update">
+        <mat-header-cell *matHeaderCellDef style="color: white;">Update</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="right-align">
+          <button mat-icon-button color="accent">
+            <mat-icon>update</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef style="color: white;">Delete</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="right-align">
+          <button mat-icon-button color="warn" >
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      
+
+  
+        <mat-header-row *matHeaderRowDef="Keys" style="background-color: black;color: white !important;"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: Keys;"></mat-row>
+    </mat-table>
+
+    <mat-paginator showFirstLastButtons [pageSizeOptions]="[5,10,20]" ></mat-paginator>
+</div>
