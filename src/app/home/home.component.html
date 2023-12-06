@@ -1,5 +1,5 @@
-<div>
-    <div style="display: flex;justify-content: space-around;">
+<div class="main-table-container" style="background-color: white;">
+    <div style="display: flex;justify-content: space-around;align-items: center; ">
 
   
     <mat-form-field >
@@ -15,8 +15,12 @@
     </div>
 
     <mat-table [dataSource]="dataSource" >
-
-  
+      
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+        </ng-container>
+      
         <!-- Name Column -->
         <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef >Name</mat-header-cell>
@@ -55,7 +59,7 @@
       <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef style="color: white;">Delete</mat-header-cell>
         <mat-cell *matCellDef="let element" class="right-align">
-          <button mat-icon-button color="warn"  (click)="delete(element)">
+          <button mat-icon-button color="warn"   (click)="deleteData(element)">
             <mat-icon class="mat-18">delete</mat-icon>
           </button>
         </mat-cell>

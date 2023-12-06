@@ -1,1 +1,14 @@
 mat-header-cell{color: white;}
+
+
+.main-table-container{
+    width: 80%;
+    overflow: auto;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+
+}
