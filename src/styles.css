@@ -5,3 +5,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     background: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     overflow: auto;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
