@@ -1,0 +1,52 @@
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    padding:6% 2%;
+    border-radius: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    align-self: center;
+    background-size: cover;     
+    background-color: white;
+    padding-top: 3%;
+}
+
+
+mat-form-field {
+    width: 100% !important; 
+}
+.login-button{
+
+    font-size: 1rem;
+    width: 100%;
+    padding: 4px 0px;
+    background-color: #10a37f;
+}
+.form-header {
+
+    font-weight: 900 !important;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    
+}
+mat-hint{
+    color: red;
+}
+
+svg{
+    width: 14%;
+    margin-bottom: 10px;
+}
+.text-align-center{
+    text-align: center;
+}
+
+
+
