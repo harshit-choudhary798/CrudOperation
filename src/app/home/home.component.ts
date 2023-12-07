@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DetailsService } from '../details-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UserFormComponent } from '../user-form/user-form.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([]);
 
-  constructor(private details: DetailsService, private dialog: MatDialog) {}
+  constructor(private details: DetailsService, private dialog: MatDialog,private router:Router) {}
 
   ngOnInit(): void {
     this.loadData();
@@ -113,5 +114,11 @@ export class HomeComponent implements OnInit {
     })
     this.loadData()
 
+  }
+
+
+  loggedOut(){
+    sessionStorage.clear()
+    this.router.navigate(['/login'])
   }
 }

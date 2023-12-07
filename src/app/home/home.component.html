@@ -1,17 +1,20 @@
 <div class="main-table-container" style="background-color: white;">
     <div style="display: flex;justify-content: space-around;align-items: center; ">
 
-  
+      <button mat-icon-button color="primary" style="position: relative; " (click)="add()">
+        <mat-icon>edit</mat-icon>
+        <span>Add User</span>
+      </button>
     <mat-form-field >
+      
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input> 
     </mat-form-field>
 
-    <button mat-icon-button color="primary" style="position: relative; " (click)="add()">
-        <mat-icon>edit</mat-icon>
-        <span>Add User</span>
-      </button>
+
       
+      <button style="text-align: left;" mat-raised-button color="accent" (click)="loggedOut()">Logout</button>
+
     </div>
 
     <mat-table [dataSource]="dataSource" >
@@ -73,3 +76,4 @@
 
     <mat-paginator showFirstLastButtons [pageSizeOptions]="[5,10,20]" ></mat-paginator>
 </div>
+
