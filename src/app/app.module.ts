@@ -16,11 +16,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { UserFormComponent } from './user-form/user-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
+import { ContactComponent } from './contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserFormComponent
+    UserFormComponent,
+    LoginComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
