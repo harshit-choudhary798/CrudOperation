@@ -1,6 +1,6 @@
 <div class="main-table-container" style="background-color: white; padding: 20px;">
 
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <div class="top-btns">
     <button mat-icon-button color="primary" style="position: relative; " (click)="add()">
       <mat-icon>edit</mat-icon>
       <span>Add User</span>
@@ -109,8 +109,10 @@
 
     <mat-header-row *matHeaderRowDef="Keys" class="custom-header-row" style="color: white; background-color: black;"></mat-header-row>
     <mat-row *matRowDef="let row; columns: Keys" class="custom-row"></mat-row>
+    
   </mat-table>
-
-  <mat-paginator showFirstLastButtons [pageSizeOptions]="[5,10,100]"></mat-paginator>
+  <mat-paginator showFirstLastButtons [pageSizeOptions]="[5,10,100]" style="background-color: white!important"></mat-paginator>
+  
 </div>
+
 </div>
