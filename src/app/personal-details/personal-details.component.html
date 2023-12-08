@@ -1,0 +1,31 @@
+<div >
+    <img [src]="Filepath" alt="User Image" style="max-width: 100%; height: auto;">
+  
+    <div>
+      <h2>{{ details.name }}</h2>
+  
+      <div>
+        <h3>Emails</h3>
+        <ul>
+          <li *ngFor="let email of details.emails">{{ email }}</li>
+        </ul>
+      </div>
+  
+      <div>
+        <h3>Phones</h3>
+        <ul>
+          <li *ngFor="let phone of details.phones">{{ phone }}</li>
+        </ul>
+      </div>
+  
+      <div>
+        <h3>Addresses</h3>
+        <div *ngFor="let address of details.addresses">
+          {{ address.city }}, {{ address.street }}, {{ address.zip }}
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+  

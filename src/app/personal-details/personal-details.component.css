@@ -1,0 +1,17 @@
+img {
+    margin-bottom: 20px;
+  }
+
+  h2,
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
