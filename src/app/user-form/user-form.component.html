@@ -1,30 +1,52 @@
-<div >
-<h2 mat-dialog-title>User Information</h2>
-<div mat-dialog-content class="">
-  <form [formGroup]="userForm">
-    <mat-form-field>
-      <label for="name">Name:</label>
-      <input matInput type="text" id="name" formControlName="name" />
-    </mat-form-field>
+<div class="user-information-form">
+  <h2 mat-dialog-title>User Information</h2>
+  <div mat-dialog-content class="form-content">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name" />
+      </div>
 
-    <mat-form-field>
-      <label for="branch">Branch:</label>
-      <input matInput type="text" id="branch" formControlName="branch" />
-    </mat-form-field>
+      <div formArrayName="emails" class="form-group">
+        <label>Emails: <span (click)="addMoreEmail()" class="add-icon">+</span></label>
+        <div *ngFor="let emailCtrl of emailControls.controls; let i = index" class="email-input">
+          <input type="text" formControlName="{{ i }}" />
+          <span *ngIf="i > 0" (click)="deleteEmail(i)" class="delete-icon">-</span>
+        </div>
+      </div>
 
-    <mat-form-field>
-      <label for="city">City:</label>
-      <input matInput type="text" id="city" formControlName="city" />
-    </mat-form-field>
+      <div formArrayName="phones" class="form-group">
+        <label>Phones: <span (click)="addMorePhoneNumbers()" class="add-icon">+</span></label>
+        <div *ngFor="let phoneCtrl of phoneControls.controls; let i = index" class="phone-input">
+          <input type="text" formControlName="{{ i }}" />
+          <span *ngIf="i > 0" (click)="deletePhone(i)" class="delete-icon">-</span>
+        </div>
+      </div>
 
-    <mat-form-field>
-      <label for="phone">Phone:</label>
-      <input matInput type="text" id="phone" formControlName="phone" />
-    </mat-form-field>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button mat-button color="primary" matDialogClose>Cancel</button>
-  <button mat-button color="accent" (click)="onSubmit()">Submit</button>
-</div>
+      <div formArrayName="addresses" class="form-group">
+        <label>Addresses: <span (click)="addMoreAddress()" class="add-icon">+</span></label>
+        <div *ngFor="let addressCtrl of addressControls; let i = index" [formGroup]="addressCtrl" class="address-input">
+          <h1 *ngIf="i > 0" (click)="deleteAddress(i)" class="delete-icon">-</h1>
+          <label for="city">City:</label>
+          <input type="text" id="city" formControlName="city" />
+
+          <label for="street">Street:</label>
+          <input type="text" id="street" formControlName="street" />
+
+          <label for="zip">Zip:</label>
+          <input type="text" id="zip" formControlName="zip" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="size">Select Image:</label>
+        <input type="file" id="size" formControlName="image" accept=".jpg, .jpeg, .png, .gif" (change)="onFileSelected($event)"/>
+      </div>
+
+      <mat-dialog-actions>
+        <button mat-button color="primary" matDialogClose>Cancel</button>
+        <button mat-button color="accent" type="submit">Submit</button>
+      </mat-dialog-actions>
+    </form>
+  </div>
 </div>

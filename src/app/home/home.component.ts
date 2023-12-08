@@ -7,6 +7,8 @@ import { DetailsService } from '../details-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UserFormComponent } from '../user-form/user-form.component';
 import { Router } from '@angular/router';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PersonalDetailsComponent } from '../personal-details/personal-details.component';
 
 @Component({
   selector: 'app-home',
@@ -48,11 +50,8 @@ export class HomeComponent implements OnInit {
             this.dataSource.paginator = this.paginator;
           }
 
-          if (!this.Keys.includes('update')) {
-            this.Keys.push('update');
-          }
-          if (!this.Keys.includes('delete')) {
-            this.Keys.push('delete');
+          if (!this.Keys.includes('actions')) {
+            this.Keys.push('actions');
           }
 
           console.log(this.Keys);
@@ -91,6 +90,7 @@ export class HomeComponent implements OnInit {
     const UpdatedData={}
    console.log(element)
     const dialogRef = this.dialog.open(UserFormComponent, { data: { 'data': element } });
+
     dialogRef.afterClosed().subscribe(
       (res)=>{
         if(res){
@@ -120,5 +120,18 @@ export class HomeComponent implements OnInit {
   loggedOut(){
     sessionStorage.clear()
     this.router.navigate(['/login'])
+  }
+
+  downloadDetails(element: any) {
+   
+    const dialogRef = this.dialog.open(PersonalDetailsComponent, {
+      data: element 
+    });
+
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      console.log('Dialog closed with result:', result);
+    });
   }
 }

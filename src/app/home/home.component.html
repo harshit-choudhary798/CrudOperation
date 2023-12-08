@@ -1,79 +1,116 @@
-<div class="main-table-container" style="background-color: white;">
-    <div style="display: flex;justify-content: space-around;align-items: center; ">
+<div class="main-table-container" style="background-color: white; padding: 20px;">
 
-      <button mat-icon-button color="primary" style="position: relative; " (click)="add()">
-        <mat-icon>edit</mat-icon>
-        <span>Add User</span>
-      </button>
-    <mat-form-field >
-      
-        <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input> 
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <button mat-icon-button color="primary" style="position: relative; " (click)="add()">
+      <mat-icon>edit</mat-icon>
+      <span>Add User</span>
+    </button>
+
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
     </mat-form-field>
 
+    <button mat-raised-button color="accent" (click)="loggedOut()">Logout</button>
+  </div>
+<div class="table-container">
+  <mat-table [dataSource]="dataSource" class="custom-mat-table">
+    <!-- Columns definitions ... -->
 
-      
-      <button style="text-align: left;" mat-raised-button color="accent" (click)="loggedOut()">Logout</button>
-
-    </div>
-
-    <mat-table [dataSource]="dataSource" >
-      
-        <ng-container matColumnDef="id">
-          <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
-          <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
-        </ng-container>
-      
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef >Name</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
-        </ng-container>
-  
-        <!-- Branch Column -->
-        <ng-container matColumnDef="branch">
-            <mat-header-cell *matHeaderCellDef>Branch</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{ element.branch }}</mat-cell>
-        </ng-container>
-  
-        <!-- City Column -->
-        <ng-container matColumnDef="city">
-            <mat-header-cell  *matHeaderCellDef>City</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
-        </ng-container>
-  
-    <!-- Phone Column -->
-    <ng-container matColumnDef="phone">
-        <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.phone }}</mat-cell>
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef class="custom-header-cell">ID</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="custom-cell">{{ element.id }}</mat-cell>
     </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef class="custom-header-cell">Name</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="custom-cell">{{ element.name }}</mat-cell>
+    </ng-container>
+
+    <!-- Emails Column -->
+    <ng-container matColumnDef="emails">
+      <mat-header-cell *matHeaderCellDef class="custom-header-cell">Emails</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="custom-cell">   
+          <div class="address-item" class="custom-list">
+            <span *ngFor="let email of element.emails">{{ email }}<br></span>
+          </div>
+      </mat-cell>
+    </ng-container>
+ 
+    <!-- Phones Column -->
+    <ng-container matColumnDef="phones">
+      <mat-header-cell *matHeaderCellDef class="custom-header-cell">Phones</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="custom-cell">     
+          <div class="align custom-list">
+            
+              <span *ngFor="let phone of element.phones">{{ phone }}<br></span>
+            
+          </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Addresses Column -->
+    <ng-container matColumnDef="addresses">
+      <mat-header-cell *matHeaderCellDef class="custom-header-cell">Addresses</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="custom-cell">
+        <div class="address-container custom-list">
+          <ng-container *ngFor="let address of element.addresses">
+            <div class="address-item">
+              <span class="city">{{ address.city }}</span>,
+              <span class="street">{{ address.street }}</span>,
+              <span class="zip">{{ address.zip }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Image Column -->
+<!-- Image Column -->
+<!-- Image Column -->
+<ng-container matColumnDef="image">
+  <mat-header-cell *matHeaderCellDef class="custom-header-cell">Image</mat-header-cell>
+  <mat-cell *matCellDef="let element" class="custom-cell">
+    <div class="address-item">
+    
+      <span>File Name: {{ element.fileName }}</span><br>
+      <span>File Size: {{ element.fileSize }}</span><br>
+      <span>File Type: {{ element.fileType }}</span>
+    </div>
+  </mat-cell>
+</ng-container>
+
 
 
     
-    <ng-container matColumnDef="update">
-        <mat-header-cell *matHeaderCellDef style="color: white;">Update</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="right-align">
-          <button mat-icon-button color="accent" (click)="update(element)">
-            <mat-icon>update</mat-icon>
-          </button>
-        </mat-cell>
-      </ng-container>
-      
-      <ng-container matColumnDef="delete">
-        <mat-header-cell *matHeaderCellDef style="color: white;">Delete</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="right-align">
-          <button mat-icon-button color="warn"   (click)="deleteData(element)">
-            <mat-icon class="mat-18">delete</mat-icon>
-          </button>
-        </mat-cell>
-      </ng-container>
-      
 
-  
-        <mat-header-row *matHeaderRowDef="Keys" style="background-color: black;color: white !important;"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: Keys;"></mat-row>
-    </mat-table>
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef class="custom-header-cell">Actions</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="custom-cell">
+        <!-- Update Action -->
+        <button mat-icon-button color="accent" (click)="update(element)">
+          <mat-icon>update</mat-icon>
+        </button>
 
-    <mat-paginator showFirstLastButtons [pageSizeOptions]="[5,10,20]" ></mat-paginator>
+        <!-- Delete Action -->
+        <button mat-icon-button color="warn" (click)="deleteData(element)">
+          <mat-icon class="mat-18">delete</mat-icon>
+        </button>
+
+        <!-- Download Action -->
+        <button mat-icon-button color="accent" (click)="downloadDetails(element)">
+          <mat-icon>download</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="Keys" class="custom-header-row" style="color: white; background-color: black;"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: Keys" class="custom-row"></mat-row>
+  </mat-table>
+
+  <mat-paginator showFirstLastButtons [pageSizeOptions]="[5,10,100]"></mat-paginator>
 </div>
-
+</div>

@@ -1,14 +1,139 @@
-mat-header-cell{color: white;}
+/* Overall table styling */
+.custom-mat-table {
+  /* width: 80%;   width: 80%;  */
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.table-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+/* Header cell styling */
+.custom-header-cell {
+  /* background-color: #333; */
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Cell styling */
+.custom-cell {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Row styling */
+.custom-row:hover {
+  /* background-color: #f5f5f5; */
+}
+
+/* Header row styling */
+.custom-header-row {
+  background-color: black;
+}
+
+/* Address item styling */
+.address-item {
+  margin-bottom: 5px;
+}
+
+/* Custom list styling */
+.custom-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Align phones in a row */
+.align {
+  display: flex;
+}
+
+/* Actions cell styling */
+.custom-cell button {
+  margin-right: 5px;
+}
+
+/* Icon button styling */
+mat-icon-button {
+  min-width: auto;
+}
+
+/* Icon color for download action */
+mat-icon-button[color="accent"]:last-child mat-icon {
+  color: green;
+}
+
+/* Icon color for delete action */
+mat-icon-button[color="warn"]:last-child mat-icon {
+  color: red;
+}
+
+/* Decrease width of columns */
+.mat-column-name,
+.mat-column-phones,
+.mat-column-emails,
+.mat-column-image,
+.mat-column-addresses {
+  max-width: 25%;
+  overflow: hidden;
+  white-space: nowrap;
+  
+}
 
 
-.main-table-container{
-    width: 80%;
-    overflow: auto;
-    display: flex;
-    justify-content:center;
-    flex-direction: column;
-    margin: 20px auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.mat-column-addresses,
+.mat-column-emails  
+ {
+  max-width: 10%;
+  /* overflow: hidden; */
+
+
   
 
+}
+
+.mat-column-addresses
+ {
+  max-width: 15%;
+  
+
+
+  
+
+}
+
+.mat-column-name,
+.mat-column-phones,
+.mat-column-image
+{
+  max-width: 8% !important;
+}
+.mat-column-emails  {
+  max-width: 12%;
+}
+.mat-column-actions{
+  max-width: 10%;
+}
+
+mat-table{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  
+}
+
+mat-row, mat-header-row, mat-footer-row {
+  display: flex;
+  /* border-width: 0; */
+  border-bottom-width: 1px;
+  border-style: solid;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
