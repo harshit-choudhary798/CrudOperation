@@ -1,333 +1,561 @@
 {
   "users": [
     {
+      "name": "Harshit",
+      "emails": [
+        "harshit184007@gmail.com",
+        "p.patel@example.org",
+        ""
+      ],
+      "phones": [
+        "87654-21098",
+        "76543-10987"
+      ],
+      "addresses": [
+        {
+          "city": "Ahmedabad",
+          "street": "789 PQR Street",
+          "zip": "380001"
+        },
+        {
+          "city": "Chennai",
+          "street": "101 LMN Avenue",
+          "zip": "600001"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "55KB"
+      },
+      "id": "2"
+    },
+    {
       "id": "3",
-      "name": "Jane Smith",
-      "branch": "Marketing",
-      "city": "Los Angeles",
-      "phone": "555-5678"
+      "name": "Amit Sharma",
+      "emails": [
+        "amit.sharma@example.com",
+        "a.sharma@example.org"
+      ],
+      "phones": [
+        "76543-21098",
+        "65432-10987"
+      ],
+      "addresses": [
+        {
+          "city": "Delhi",
+          "street": "222 XYZ Street",
+          "zip": "110002"
+        },
+        {
+          "city": "Mumbai",
+          "street": "333 ABC Avenue",
+          "zip": "400002"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "52KB"
+      }
     },
     {
       "id": "4",
-      "name": "Bob Johnson",
-      "branch": "Sales",
-      "city": "Chicago",
-      "phone": "555-9876"
+      "name": "Anita Verma",
+      "emails": [
+        "anita.verma@example.com",
+        "a.verma@example.org"
+      ],
+      "phones": [
+        "65432-56789",
+        "54321-67890"
+      ],
+      "addresses": [
+        {
+          "city": "Lucknow",
+          "street": "444 LMN Lane",
+          "zip": "226001"
+        },
+        {
+          "city": "Chandigarh",
+          "street": "555 PQR Road",
+          "zip": "160001"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "48KB"
+      }
     },
     {
-      "id": "5",
-      "name": "Emma Davis",
-      "branch": "Human Resources",
-      "city": "San Francisco",
-      "phone": "555-4567"
+      "name": "Neha Singh",
+      "emails": [
+        "neha.singh@example.com",
+        "n.singh@example.org"
+      ],
+      "phones": [
+        "76543-87654",
+        "65432-98765"
+      ],
+      "addresses": [
+        {
+          "city": "Jaipur",
+          "street": "777 GHI Lane",
+          "zip": "302001"
+        },
+        {
+          "city": "Kolkata",
+          "street": "888 JKL Road",
+          "zip": "70000"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "46KB"
+      },
+      "id": "5"
     },
     {
       "id": "6",
-      "name": "Mike Wilson",
-      "branch": "Finance",
-      "city": "Houston",
-      "phone": "555-8765"
+      "name": "Vikram Verma",
+      "emails": [
+        "vikram.verma@example.com",
+        "v.verma@example.org"
+      ],
+      "phones": [
+        "54321-87654",
+        "43210-98765"
+      ],
+      "addresses": [
+        {
+          "city": "Lucknow",
+          "street": "999 PQR Lane",
+          "zip": "226002"
+        },
+        {
+          "city": "Delhi",
+          "street": "101 ABC Avenue",
+          "zip": "110002"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "51KB"
+      }
     },
     {
       "id": "7",
-      "name": "Sarah Brown",
-      "branch": "IT",
-      "city": "Seattle",
-      "phone": "555-2345"
+      "name": "Meera Kapoor",
+      "emails": [
+        "meera.kapoor@example.com",
+        "m.kapoor@example.org"
+      ],
+      "phones": [
+        "65432-10987",
+        "54321-21098"
+      ],
+      "addresses": [
+        {
+          "city": "Mumbai",
+          "street": "111 XYZ Street",
+          "zip": "400003"
+        },
+        {
+          "city": "Chennai",
+          "street": "222 LMN Road",
+          "zip": "600002"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "54KB"
+      }
     },
     {
       "id": "8",
-      "name": "Alex Turner",
-      "branch": "Operations",
-      "city": "Denver",
-      "phone": "555-7890"
+      "name": "Aryan Malhotra",
+      "emails": [
+        "aryan.malhotra@example.com",
+        "a.malhotra@example.org"
+      ],
+      "phones": [
+        "76543-56789",
+        "65432-67890"
+      ],
+      "addresses": [
+        {
+          "city": "Lucknow",
+          "street": "333 GHI Road",
+          "zip": "226003"
+        },
+        {
+          "city": "Jaipur",
+          "street": "444 JKL Avenue",
+          "zip": "302003"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "49KB"
+      }
     },
     {
       "id": "9",
-      "name": "Grace Taylor",
-      "branch": "Customer Service",
-      "city": "Miami",
-      "phone": "555-3456"
+      "name": "Pooja Sharma",
+      "emails": [
+        "pooja.sharma@example.com",
+        "p.sharma@example.org"
+      ],
+      "phones": [
+        "87654-98765",
+        "76543-87654"
+      ],
+      "addresses": [
+        {
+          "city": "Delhi",
+          "street": "555 ABC Lane",
+          "zip": "110003"
+        },
+        {
+          "city": "Mumbai",
+          "street": "666 XYZ Road",
+          "zip": "400003"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "53KB"
+      }
     },
     {
       "id": "10",
-      "name": "Jack Harris",
-      "branch": "Legal",
-      "city": "Boston",
-      "phone": "555-6543"
+      "name": "Rohan Kapoor",
+      "emails": [
+        "rohan.kapoor@example.com",
+        "r.kapoor@example.org"
+      ],
+      "phones": [
+        "54321-21098",
+        "43210-10987"
+      ],
+      "addresses": [
+        {
+          "city": "Mumbai",
+          "street": "777 PQR Street",
+          "zip": "400004"
+        },
+        {
+          "city": "Delhi",
+          "street": "888 LMN Lane",
+          "zip": "110004"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "50KB"
+      }
     },
     {
       "id": "11",
-      "name": "Olivia Miller",
-      "branch": "Research and Development",
-      "city": "Dallas",
-      "phone": "555-0123"
+      "name": "Kavita Sharma",
+      "emails": [
+        "kavita.sharma@example.com",
+        "k.sharma@example.org"
+      ],
+      "phones": [
+        "98765-43210",
+        "87654-32109"
+      ],
+      "addresses": [
+        {
+          "city": "Mumbai",
+          "street": "11 ABC Lane",
+          "zip": "400011"
+        },
+        {
+          "city": "Delhi",
+          "street": "456 XYZ Road",
+          "zip": "110011"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "50KB"
+      }
     },
     {
       "id": "12",
-      "name": "Ethan White",
-      "branch": "Public Relations",
-      "city": "Phoenix",
-      "phone": "555-7891"
+      "name": "Vivek Verma",
+      "emails": [
+        "vivek.verma@example.com",
+        "v.verma@example.org"
+      ],
+      "phones": [
+        "87654-21098",
+        "76543-10987"
+      ],
+      "addresses": [
+        {
+          "city": "Ahmedabad",
+          "street": "789 PQR Street",
+          "zip": "380012"
+        },
+        {
+          "city": "Chennai",
+          "street": "101 LMN Avenue",
+          "zip": "600012"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "55KB"
+      }
     },
     {
       "id": "13",
-      "name": "Ava Turner",
-      "branch": "Quality Assurance",
-      "city": "Atlanta",
-      "phone": "555-2341"
+      "name": "Manish Singh",
+      "emails": [
+        "manish.singh@example.com",
+        "m.singh@example.org"
+      ],
+      "phones": [
+        "76543-21098",
+        "65432-10987"
+      ],
+      "addresses": [
+        {
+          "city": "Delhi",
+          "street": "222 XYZ Street",
+          "zip": "110012"
+        },
+        {
+          "city": "Mumbai",
+          "street": "333 ABC Avenue",
+          "zip": "400012"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "52KB"
+      }
     },
     {
       "id": "14",
-      "name": "Noah Garcia",
-      "branch": "Logistics",
-      "city": "Philadelphia",
-      "phone": "555-8910"
+      "name": "Anjali Verma",
+      "emails": [
+        "anjali.verma@example.com",
+        "a.verma@example.org"
+      ],
+      "phones": [
+        "65432-56789",
+        "54321-67890"
+      ],
+      "addresses": [
+        {
+          "city": "Lucknow",
+          "street": "444 LMN Lane",
+          "zip": "226011"
+        },
+        {
+          "city": "Chandigarh",
+          "street": "555 PQR Road",
+          "zip": "160011"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "48KB"
+      }
     },
     {
       "id": "15",
-      "name": "Sophia Reed",
-      "branch": "Education",
-      "city": "Detroit",
-      "phone": "555-1432"
+      "name": "Naveen Singh",
+      "emails": [
+        "naveen.singh@example.com",
+        "n.singh@example.org"
+      ],
+      "phones": [
+        "76543-87654",
+        "65432-98765"
+      ],
+      "addresses": [
+        {
+          "city": "Jaipur",
+          "street": "777 GHI Lane",
+          "zip": "302011"
+        },
+        {
+          "city": "Kolkata",
+          "street": "888 JKL Road",
+          "zip": "700011"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "46KB"
+      }
     },
     {
       "id": "16",
-      "name": "Liam Martinez",
-      "branch": "Healthcare",
-      "city": "Minneapolis",
-      "phone": "555-1098"
+      "name": "Vikas Verma",
+      "emails": [
+        "vikas.verma@example.com",
+        "v.verma@example.org"
+      ],
+      "phones": [
+        "54321-87654",
+        "43210-98765"
+      ],
+      "addresses": [
+        {
+          "city": "Lucknow",
+          "street": "999 PQR Road",
+          "zip": "226012"
+        },
+        {
+          "city": "Delhi",
+          "street": "101 ABC Avenue",
+          "zip": "110012"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "51KB"
+      }
     },
     {
       "id": "17",
-      "name": "Chloe Hall",
-      "branch": "Real Estate",
-      "city": "San Diego",
-      "phone": "555-7654"
+      "name": "Priyanka Kapoor",
+      "emails": [
+        "priyanka.kapoor@example.com",
+        "p.kapoor@example.org"
+      ],
+      "phones": [
+        "65432-10987",
+        "54321-21098"
+      ],
+      "addresses": [
+        {
+          "city": "Mumbai",
+          "street": "111 XYZ Street",
+          "zip": "400013"
+        },
+        {
+          "city": "Chennai",
+          "street": "222 LMN Avenue",
+          "zip": "600012"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "54KB"
+      }
     },
     {
       "id": "18",
-      "name": "Mia Brooks",
-      "branch": "Agriculture",
-      "city": "Portland",
-      "phone": "555-2109"
+      "name": "Akash Malhotra",
+      "emails": [
+        "akash.malhotra@example.com",
+        "a.malhotra@example.org"
+      ],
+      "phones": [
+        "76543-56789",
+        "65432-67890"
+      ],
+      "addresses": [
+        {
+          "city": "Lucknow",
+          "street": "333 GHI Road",
+          "zip": "226013"
+        },
+        {
+          "city": "Jaipur",
+          "street": "444 JKL Lane",
+          "zip": "302013"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "49KB"
+      }
     },
     {
       "id": "19",
-      "name": "Jackson Young",
-      "branch": "Media",
-      "city": "Austin",
-      "phone": "555-6542"
+      "name": "Neha Sharma",
+      "emails": [
+        "neha.sharma@example.com",
+        "n.sharma@example.org"
+      ],
+      "phones": [
+        "87654-98765",
+        "76543-87654"
+      ],
+      "addresses": [
+        {
+          "city": "Delhi",
+          "street": "555 ABC Lane",
+          "zip": "110013"
+        },
+        {
+          "city": "Mumbai",
+          "street": "666 XYZ Road",
+          "zip": "400013"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "53KB"
+      }
     },
     {
       "id": "20",
-      "name": "Aiden Wood",
-      "branch": "Fashion",
-      "city": "Charlotte",
-      "phone": "555-9012"
+      "name": "Rahul Kapoor",
+      "emails": [
+        "rahul.kapoor@example.com",
+        "r.kapoor@example.org"
+      ],
+      "phones": [
+        "54321-21098",
+        "43210-10987"
+      ],
+      "addresses": [
+        {
+          "city": "Mumbai",
+          "street": "777 PQR Street",
+          "zip": "400014"
+        },
+        {
+          "city": "Delhi",
+          "street": "888 LMN Lane",
+          "zip": "110014"
+        }
+      ],
+      "image": {
+        "size": "200x200",
+        "file_size": "50KB"
+      }
     },
     {
-      "id": "21",
-      "name": "Scarlett Nelson",
-      "branch": "Consulting",
-      "city": "Raleigh",
-      "phone": "555-4321"
-    },
-    {
-      "id": "22",
-      "name": "Aditya Sharma",
-      "branch": "Civil Engineering",
-      "city": "Chennai",
-      "phone": "9876543210"
-    },
-    {
-      "id": "23",
-      "name": "Advait Patel",
-      "branch": "Chemical Engineering",
-      "city": "Kolkata",
-      "phone": "8765432109"
-    },
-    {
-      "id": "24",
-      "name": "Aishwarya Raj",
-      "branch": "Biotechnology",
-      "city": "Ahmedabad",
-      "phone": "7654321098"
-    },
-    {
-      "id": "25",
-      "name": "Akshay Kumar",
-      "branch": "Computer Science",
-      "city": "Bangalore",
-      "phone": "8907654321"
-    },
-    {
-      "id": "26",
-      "name": "Alia Bhatt",
-      "branch": "Electrical Engineering",
-      "city": "Mumbai",
-      "phone": "7890123456"
-    },
-    {
-      "id": "27",
-      "name": "Amit Shah",
-      "branch": "Political Science",
-      "city": "Delhi",
-      "phone": "6789012345"
-    },
-    {
-      "id": "28",
-      "name": "Amrita Singh",
-      "branch": "History",
-      "city": "Jaipur",
-      "phone": "5678901234"
-    },
-    {
-      "id": "29",
-      "name": "Anil Kapoor",
-      "branch": "Drama",
-      "city": "Lucknow",
-      "phone": "4567890123"
-    },
-    {
-      "id": "30",
-      "name": "Anushka Sharma",
-      "branch": "Physics",
-      "city": "Chandigarh",
-      "phone": "3456789012"
-    },
-    {
-      "id": "31",
-      "name": "Arjun Kapoor",
-      "branch": "Chemistry",
-      "city": "Hyderabad",
-      "phone": "2345678901"
-    },
-    {
-      "id": "32",
-      "name": "Aryan Khan",
-      "branch": "Mathematics",
-      "city": "Pune",
-      "phone": "1234567890"
-    },
-    {
-      "id": "33",
-      "name": "Ayesha Khan",
-      "branch": "Economics",
-      "city": "Ahmedabad",
-      "phone": "8901234567"
-    },
-    {
-      "id": "34",
-      "name": "Bhumi Pednekar",
-      "branch": "Environmental Science",
-      "city": "Surat",
-      "phone": "7890123456"
-    },
-    {
-      "id": "35",
-      "name": "Deepika Padukone",
-      "branch": "Sociology",
-      "city": "Goa",
-      "phone": "6789012345"
-    },
-    {
-      "id": "37",
-      "name": "Farhan Akhtar",
-      "branch": "Journalism",
-      "city": "Indore",
-      "phone": "4567890123"
-    },
-    {
-      "id": "38",
-      "name": "Fatima Sana Shaikh",
-      "branch": "Philosophy",
-      "city": "Bhopal",
-      "phone": "3456789012"
-    },
-    {
-      "id": "39",
-      "name": "Hrithik Roshan",
-      "branch": "Geography",
-      "city": "Kochi",
-      "phone": "2345678901"
-    },
-    {
-      "id": "40",
-      "name": "Ileana D'Cruz",
-      "branch": "Literature",
-      "city": "Thiruvananthapuram",
-      "phone": "1234567890"
-    },
-    {
-      "id": "41",
-      "name": "Imran Khan",
-      "branch": "Public Health",
-      "city": "Bhubaneswar",
-      "phone": "8901234567"
-    },
-    {
-      "id": "42",
-      "name": "Jacqueline Fernandez",
-      "branch": "Astrophysics",
-      "city": "Guwahati",
-      "phone": "7890123456"
-    },
-    {
-      "id": "44",
-      "name": "Jimmy Shergill",
-      "branch": "Computer Engineering",
-      "city": "Agartala",
-      "phone": "5678901234"
-    },
-    {
-      "id": "45",
-      "name": "Kangana Ranaut",
-      "branch": "Political Science",
-      "city": "Aizawl",
-      "phone": "4567890123"
-    },
-    {
-      "id": "46",
-      "name": "Kareena Kapoor",
-      "branch": "Electronics",
-      "city": "Ranchi",
-      "phone": "3456789012"
-    },
-    {
-      "id": "47",
-      "name": "Kartik Aaryan",
-      "branch": "Statistics",
-      "city": "Itanagar",
-      "phone": "2345678901"
-    },
-    {
-      "id": "48",
-      "name": "Katrina Kaif",
-      "branch": "Biomedical Engineering",
-      "city": "Dispur",
-      "phone": "1234567890"
-    },
-    {
-      "id": "49",
-      "name": "Kiara Advani",
-      "branch": "Nuclear Physics",
-      "city": "Kohima",
-      "phone": "8901234567"
-    },
-    {
-      "id": "50",
-      "name": "Kriti Sanon",
-      "branch": "Meteorology",
-      "city": "Panaji",
-      "phone": "7890123456"
-    },
-    {
-      "name": "Harshit Choudhary",
-      "branch": "EEE",
-      "city": "jagdalpur",
-      "phone": "123",
-      "id": "1701254604367"
+      "name": "harshit",
+      "emails": [
+        "adas@asdad",
+        "dasdasd@sadasd"
+      ],
+      "phones": [
+        "21212121",
+        "42111111"
+      ],
+      "addresses": [
+        {
+          "city": "fdasfasf",
+          "street": "asdfsdaf",
+          "zip": "asdfsaf"
+        }
+        
+      ],
+      "image": "C:\\fakepath\\49.jpg",
+      "fileName": "49.jpg",
+      "fileSize": 3034,
+      "fileType": "image/jpeg",
+      "id": "1702039778010"
     }
   ]
 }
