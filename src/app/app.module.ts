@@ -18,6 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
+import {MatListModule} from '@angular/material/list';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     UserFormComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    PersonalDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { ContactComponent } from './contact/contact.component';
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
