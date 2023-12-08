@@ -27,7 +27,7 @@
 /* Cell styling */
 .custom-cell {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  
 }
 
 /* Row styling */
@@ -85,36 +85,37 @@ mat-icon-button[color="warn"]:last-child mat-icon {
   max-width: 25%;
   overflow: hidden;
   white-space: nowrap;
+  text-decoration: ellipse !important;
   
 }
 .mat-column-addresses,
 .mat-column-emails {
-  border: 1px solid black;
   
   white-space: nowrap;
   text-overflow: ellipsis !important;
-  /* width: 10%; */
-  /* width: 34px; */
+
+  width: 10% !important;
 }
 
 /* Add more specific selectors if needed */
 .mat-table .mat-column-addresses,
 .mat-table .mat-column-emails {
   /* Your styles here */
-  white-space: nowrap;
-  text-overflow: ellipsis !important;
+  max-width: 12 !important;
+  
+  
 }
 
 
 .mat-column-addresses
  {
-  max-width: 15%;
-  
-
-
-  
-
+  max-width: 19%;
 }
+
+.mat-column-name, .mat-column-phones, .mat-column-image{
+  max-width: 11% !important;
+}
+
 
 .mat-column-name,
 .mat-column-phones,
@@ -128,6 +129,9 @@ mat-icon-button[color="warn"]:last-child mat-icon {
 .mat-column-actions{
   max-width: 10%;
 }
+
+
+
 
 mat-table{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -145,15 +149,26 @@ mat-paginator {
 }
 
 
-mat-row, mat-header-row, mat-footer-row {
+mat-row, mat-footer-row {
   display: flex;
   /* border-width: 0; */
   border-bottom-width: 1px;
   border-style: solid;
   align-items: center;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
+
+
+mat-header-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+  padding-top: 15px;
+}
+
+
 .top-btns{
   
 
@@ -163,4 +178,45 @@ mat-row, mat-header-row, mat-footer-row {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.mat-body, .mat-body-1, .mat-typography {
+  font: 385 4px/37px Roboto, "Helvetica Neue", sans-serif !important;
+  letter-spacing: normal !important;
+}
+mat-cell, mat-header-cell, mat-footer-cell {
+  /* flex: 1; */
+  display: block;
+  align-items: center;
+  overflow: hidden;
+  word-wrap: break-word;
+  min-height: inherit;
+}
+
+mat-table{
+  font: 300 10px/30px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-column-actions {
+  max-width: 10%;
+  display: block;
+}
+
+.custom-cell[_ngcontent-pft-c143] {
+  padding: 10px;
+   border-bottom: none !important;
+}
+
+/* Header cell styling */
+.custom-header-cell {
+  
+  color: white;
+  font-weight: bold;
+  padding: 1px; 
+  text-align: center;
+  
+}
+
+
+.action-cell{
+  display: flex;
 }
