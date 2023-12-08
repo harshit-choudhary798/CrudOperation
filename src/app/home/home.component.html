@@ -34,7 +34,7 @@
       <mat-header-cell *matHeaderCellDef class="custom-header-cell">Emails</mat-header-cell>
       <mat-cell *matCellDef="let element" class="custom-cell">   
           <div class="address-item" class="custom-list">
-            <span *ngFor="let email of element.emails">{{ email }}<br></span>
+            <span *ngFor="let email of element.emails" style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis;">{{ email }}<br></span>
           </div>
       </mat-cell>
     </ng-container>

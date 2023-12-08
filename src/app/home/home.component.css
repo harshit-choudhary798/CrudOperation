@@ -87,18 +87,24 @@ mat-icon-button[color="warn"]:last-child mat-icon {
   white-space: nowrap;
   
 }
-
-
 .mat-column-addresses,
-.mat-column-emails  
- {
-  max-width: 10%;
-  /* overflow: hidden; */
-
-
+.mat-column-emails {
+  border: 1px solid black;
   
-
+  white-space: nowrap;
+  text-overflow: ellipsis !important;
+  /* width: 10%; */
+  /* width: 34px; */
 }
+
+/* Add more specific selectors if needed */
+.mat-table .mat-column-addresses,
+.mat-table .mat-column-emails {
+  /* Your styles here */
+  white-space: nowrap;
+  text-overflow: ellipsis !important;
+}
+
 
 .mat-column-addresses
  {
