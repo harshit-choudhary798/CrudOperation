@@ -20,7 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import {MatListModule} from '@angular/material/list';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,8 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
     MatButtonModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatListModule
+    MatListModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
