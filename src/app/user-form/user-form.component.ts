@@ -41,16 +41,16 @@ export class UserFormComponent implements OnInit {
 
   initializeForm() {
     this.userForm = this.fb.group({
-      name: ['', Validators.required],
-      emails: this.fb.array(['']),
-      phones: this.fb.array(['']),
+      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], 
+      emails: this.fb.array([''], [Validators.email]),
+      phones: this.fb.array([''], [Validators.pattern(/^\d{10}$/)]), 
       addresses: this.fb.array([
         this.createAddressControl('', '', ''),
       ]),
       image: [null, Validators.required],
-      fileName: [''], // New field to store the file name
-      fileSize: [''], // New field to store the file size
-      fileType: [''], // New field to store the file type
+      fileName: [''],
+      fileSize: [''],
+      fileType: [''],
     });
   }
   
@@ -109,9 +109,15 @@ export class UserFormComponent implements OnInit {
   }
 
   addMoreAddress() {
+    const addressesFormArray = this.userForm.get('addresses') as FormArray;
     const newAddressControl = this.createAddressControl('', '', '');
-    this.addressControls.push(newAddressControl);
+    addressesFormArray.push(newAddressControl);
+    // this.userForm.markForCheck();
   }
+  
+  
+  
+  
   
   addMoreEmail() {
     const newEmailControl = this.fb.control('', Validators.email);
@@ -136,7 +142,7 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.userForm.value);
+    console.log(this.userForm);
     this.dialogRef.close(this.userForm.value);
   }
 }

@@ -1,17 +1,65 @@
-img {
-    margin-bottom: 20px;
-  }
+/* Add this to your global styles or component styles */
+.user-profile {
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 600px;
+}
 
-  h2,
-  h3 {
-    margin-bottom: 10px;
-  }
+.image-container {
+  /* flex: 0 0 30%;
+  margin-right: 20px; */
+ 
+  margin: 0 auto;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+.user-image {
+  
+  height: auto;
+  border-radius: 8px;
+  padding: 10px;
+  border: 2 px solid black !important;
+}
 
-  li {
-    margin-bottom: 5px;
+.details-container {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+.details-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.details-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.details-list {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.mat-list-item {
+  padding: 10px;
+}
+
+
+/* your-component.component.css */
+
+@media print {
+  .download{
+    display: none;
   }
+}

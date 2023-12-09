@@ -22,8 +22,15 @@ export class PersonalDetailsComponent implements OnInit {
      this.Filepath='/assets/'+this.details.fileName
     console.log(this.Filepath)
   }
-
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+  downloadJson() {
+    window.print()
     
   }
+  
+
 }
+
+
