@@ -1,27 +1,64 @@
-# CrudOperation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+Steps to use this :-
+1.npm i (Install all required packages)
+2.ng serve (to start angular server)
+3.json-server db.json (this will start the db that is present in local system)
 
-## Development server
+Crud Operation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Login Page
+   - Implemented using HTML, CSS, and Angular framework.
+   - Secure user authentication.
 
-## Code scaffolding
+2. User Dashboard
+   - After successful login, users are redirected to a dashboard.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ 3. Add New Users
+   - Form with fields for name, email, phone (multiple), addresses (multiple), and image upload.
+   - Data stored in JSON format on the server using JSON Server.
 
-## Build
+ 4. Users Table
+   - Displayed in tabular format on the dashboard.
+   - Each row represents a user with columns for name, email, phone, addresses, etc.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ 5. Pagination
+   - Implemented for the users' table for better user experience.
 
-## Running unit tests
+ 6. CRUD Operations
+    6.1. Create
+   - Button to open a modal/form for adding a new user.
+   - Upon submission, the data is sent to the server (JSON Server) for storage.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   6.2. Read
+   - Displayed in the table on the dashboard.
+   - Pagination for easy navigation through the user list.
 
-## Running end-to-end tests
+   6.3. Update
+   - Edit button in each row to open a modal/form pre-filled with the user's details.
+   - Upon submission, the updated data is sent to the server.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   6.4. Delete
+   - Delete button in each row to remove a user.
+   - Sends a request to the server to delete the user.
 
-## Further help
+ 7. Action Buttons in the Table
+   - Update: Opens a modal/form for updating user details.
+   - Delete: Removes the user from the table and sends a request to delete from the server.
+   - Preview: Opens a modal displaying detailed information about the user.
+   - Print Detail: Prints the user's details.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ 8. Angular Material
+   - Utilized for UI components and styling.
+   - Modals, forms, buttons, and table components from Angular Material.
+
+ 9. Image and Text Messages
+   - Users can upload an image and input text messages like name, email, phone, and addresses.
+   - Multiple phone numbers and addresses are supported.
+
+ 10. Data Storage
+   - JSON Server used to store and retrieve user data.
+
+11. Integration
+   - Angular framework used to structure and manage the frontend logic.
+   - HTML, CSS, and JavaScript for the overall design and interactivity.
+
