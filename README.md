@@ -62,3 +62,8 @@ Crud Operation
    - Angular framework used to structure and manage the frontend logic.
    - HTML, CSS, and JavaScript for the overall design and interactivity.
 
+![Screenshot (1179)](https://github.com/harshit-choudhary798/CrudOperation/assets/111317199/8653d3c4-fa43-4408-9ce0-3823bff22ae6)
+![Screenshot (1178)](https://github.com/harshit-choudhary798/CrudOperation/assets/111317199/09f11f41-3902-45cf-aec9-692f4172e96b)
+![Screenshot (1184)](https://github.com/harshit-choudhary798/CrudOperation/assets/111317199/f65bde3a-054b-4cdb-a3c7-c5fe97e27def)
+![Screenshot (1182)](https://github.com/harshit-choudhary798/CrudOperation/assets/111317199/d7c592a1-c154-46b8-8873-7d711c0011a9)
+
