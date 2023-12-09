@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import {MatListModule} from '@angular/material/list';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { UnknownrouteComponent } from './unknownroute/unknownroute.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     UserFormComponent,
     LoginComponent,
     ContactComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    UnknownrouteComponent
   ],
   imports: [
     BrowserModule,
