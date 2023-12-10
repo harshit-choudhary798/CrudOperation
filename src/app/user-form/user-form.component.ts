@@ -21,14 +21,17 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     if (this.data) {
       const Details = this.data.data;
+      
       this.userForm = this.fb.group({
         name: [Details.name || '', Validators.required],
         emails: this.fb.array(this.createEmailControls(Details.emails)),
         phones: this.fb.array(this.createPhoneControls(Details.phones)),
         addresses: this.fb.array(this.createAddressControls(Details.addresses)),
         image: [Details.image],
+        
         fileName: [Details.fileName], 
         fileSize: [Details.fileSize], 
         fileType: [Details.fileType],
@@ -49,7 +52,7 @@ export class UserFormComponent implements OnInit {
       
       phones: this.fb.array([this.fb.control('', [Validators.required, Validators.pattern(/^\d{10}$/)])]),
       addresses: this.fb.array([this.createAddressControl('', '', '')]),
-      image: [null, Validators.required],
+      image: [null],
       fileName: [''],
       fileSize: [''],
       fileType: [''],
