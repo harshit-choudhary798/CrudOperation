@@ -1,5 +1,3 @@
-/* styles.css (or your component's style file) */
-
 .user-information-form {
  width: 800px;
   width: 100%;
@@ -136,4 +134,5 @@ button {
 .file-input-label {
   margin-right: 8px;
 }
+
 

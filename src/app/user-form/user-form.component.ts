@@ -11,6 +11,7 @@ import { DetailsService } from '../details-service.service';
 export class UserFormComponent implements OnInit {
   userForm!: FormGroup;
   details: any;
+  ChangeImage: boolean=true;
 
   constructor(
     private fb: FormBuilder,
@@ -18,7 +19,7 @@ export class UserFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private service: DetailsService
   ) {
-    this.details = data;
+    
   }
 
   ngOnInit() {
@@ -29,11 +30,14 @@ export class UserFormComponent implements OnInit {
         emails: this.fb.array(this.createEmailControls(Details.emails)),
         phones: this.fb.array(this.createPhoneControls(Details.phones)),
         addresses: this.fb.array(this.createAddressControls(Details.addresses)),
-        image: [null, Validators.required],
-        fileName: [Details.fileName], // New field to store the file name
-        fileSize: [Details.fileSize], // New field to store the file size
-        fileType: [Details.fileType], // New field to store the file type
+        image: [Details.image, Validators.required],
+        fileName: [Details.fileName], 
+        fileSize: [Details.fileSize], 
+        fileType: [Details.fileType],
       });
+
+      this.ChangeImage=false
+
     } else {
       this.initializeForm();
     }

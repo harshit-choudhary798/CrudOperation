@@ -90,7 +90,7 @@ export class HomeComponent implements OnInit {
     const UpdatedData={}
    console.log(element)
     const dialogRef = this.dialog.open(UserFormComponent, { data: { 'data': element } });
-
+    
     dialogRef.afterClosed().subscribe(
       (res)=>{
         if(res){

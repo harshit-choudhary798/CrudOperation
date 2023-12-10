@@ -1,147 +1,6 @@
 {
   "users": [
     {
-      "name": "Harshit",
-      "emails": [
-        "harshit184007@gmail.com",
-        "p.patel@example.org",
-        ""
-      ],
-      "phones": [
-        "87654-21098",
-        "76543-10987"
-      ],
-      "addresses": [
-        {
-          "city": "Ahmedabad",
-          "street": "789 PQR Street",
-          "zip": "380001"
-        },
-        {
-          "city": "Chennai",
-          "street": "101 LMN Avenue",
-          "zip": "600001"
-        }
-      ],
-      "image": {
-        "size": "200x200",
-        "file_size": "55KB"
-      },
-      "id": "2"
-    },
-    {
-      "id": "3",
-      "name": "Amit Sharma",
-      "emails": [
-        "amit.sharma@example.com",
-        "a.sharma@example.org"
-      ],
-      "phones": [
-        "76543-21098",
-        "65432-10987"
-      ],
-      "addresses": [
-        {
-          "city": "Delhi",
-          "street": "222 XYZ Street",
-          "zip": "110002"
-        },
-        {
-          "city": "Mumbai",
-          "street": "333 ABC Avenue",
-          "zip": "400002"
-        }
-      ],
-      "image": {
-        "size": "200x200",
-        "file_size": "52KB"
-      }
-    },
-    {
-      "id": "4",
-      "name": "Anita Verma",
-      "emails": [
-        "anita.verma@example.com",
-        "a.verma@example.org"
-      ],
-      "phones": [
-        "65432-56789",
-        "54321-67890"
-      ],
-      "addresses": [
-        {
-          "city": "Lucknow",
-          "street": "444 LMN Lane",
-          "zip": "226001"
-        },
-        {
-          "city": "Chandigarh",
-          "street": "555 PQR Road",
-          "zip": "160001"
-        }
-      ],
-      "image": {
-        "size": "200x200",
-        "file_size": "48KB"
-      }
-    },
-    {
-      "name": "Neha Singh",
-      "emails": [
-        "neha.singh@example.com",
-        "n.singh@example.org"
-      ],
-      "phones": [
-        "76543-87654",
-        "65432-98765"
-      ],
-      "addresses": [
-        {
-          "city": "Jaipur",
-          "street": "777 GHI Lane",
-          "zip": "302001"
-        },
-        {
-          "city": "Kolkata",
-          "street": "888 JKL Road",
-          "zip": "70000"
-        }
-      ],
-      "image": {
-        "size": "200x200",
-        "file_size": "46KB"
-      },
-      "id": "5"
-    },
-    {
-      "id": "6",
-      "name": "Vikram Verma",
-      "emails": [
-        "vikram.verma@example.com",
-        "v.verma@example.org"
-      ],
-      "phones": [
-        "54321-87654",
-        "43210-98765"
-      ],
-      "addresses": [
-        {
-          "city": "Lucknow",
-          "street": "999 PQR Lane",
-          "zip": "226002"
-        },
-        {
-          "city": "Delhi",
-          "street": "101 ABC Avenue",
-          "zip": "110002"
-        }
-      ],
-      "image": {
-        "size": "200x200",
-        "file_size": "51KB"
-      }
-    },
-    {
       "id": "7",
       "name": "Meera Kapoor",
       "emails": [
@@ -557,20 +416,23 @@
       "id": "1702039778010"
     },
     {
-      "name": "John Doe ",
+      "name": "Morty Smith",
       "emails": [
-        "john.doe123@gmail.com",
-        "doe.john@gmail.com"
+        "john.doe123@gmail.com"
       ],
       "phones": [
-        "3289192821",
-        "2313121344"
+        "3289192821"
       ],
       "addresses": [
         {
-          "city": "new york",
-          "street": "12",
-          "zip": "54492"
+          "city": "America ",
+          "street": "45",
+          "zip": "31283"
+        },
+        {
+          "city": "amsterdam",
+          "street": "1",
+          "zip": "32"
         }
       ],
       "image": "C:\\fakepath\\16.jpg",
