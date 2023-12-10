@@ -29,7 +29,7 @@ export class UserFormComponent implements OnInit {
         emails: this.fb.array(this.createEmailControls(Details.emails)),
         phones: this.fb.array(this.createPhoneControls(Details.phones)),
         addresses: this.fb.array(this.createAddressControls(Details.addresses)),
-        image: [null, Validators.required],
+        image: [Details.image , Validators.required],
         fileName: [Details.fileName], // New field to store the file name
         fileSize: [Details.fileSize], // New field to store the file size
         fileType: [Details.fileType], // New field to store the file type

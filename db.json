@@ -4,8 +4,7 @@
       "name": "Harshit",
       "emails": [
         "harshit184007@gmail.com",
-        "p.patel@example.org",
-        ""
+        "p.patel@example.org"
       ],
       "phones": [
         "87654-21098",
@@ -578,6 +577,34 @@
       "fileSize": 5216,
       "fileType": "image/jpeg",
       "id": "1702133782429"
+    },
+    {
+      "name": "Aoi2",
+      "emails": [
+        "aoi@aoi.com",
+        "aoi2@aoi2.com"
+      ],
+      "phones": [
+        "123456789",
+        "123456789"
+      ],
+      "addresses": [
+        {
+          "city": "city1",
+          "street": "street1",
+          "zip": "492001"
+        },
+        {
+          "city": "city 2",
+          "street": "st2",
+          "zip": "492006"
+        }
+      ],
+      "image": "C:\\fakepath\\6.jpg",
+      "fileName": "6.jpg",
+      "fileSize": 5554,
+      "fileType": "image/jpeg",
+      "id": "1702216249173"
     }
   ]
 }
