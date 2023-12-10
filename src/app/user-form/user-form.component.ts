@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, AbstractControl, FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DetailsService } from '../details-service.service';
 
 @Component({
   selector: 'user-form',
@@ -16,8 +15,7 @@ export class UserFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<any>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private service: DetailsService
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     
   }
@@ -30,11 +28,11 @@ export class UserFormComponent implements OnInit {
         emails: this.fb.array(this.createEmailControls(Details.emails)),
         phones: this.fb.array(this.createPhoneControls(Details.phones)),
         addresses: this.fb.array(this.createAddressControls(Details.addresses)),
-        image: [Details.image, Validators.required],
+        image: [Details.image],
         fileName: [Details.fileName], 
         fileSize: [Details.fileSize], 
         fileType: [Details.fileType],
-      });
+      });  
 
       this.ChangeImage=false
 
@@ -57,15 +55,6 @@ export class UserFormComponent implements OnInit {
       fileType: [''],
     });
   }
-  
-  
-
-  
-
-
-
-
-
 
   onFileSelected(event: any) {
     console.log('file name:', event.target.files[0].name);
@@ -91,12 +80,9 @@ export class UserFormComponent implements OnInit {
     return emails.map(email => this.fb.control(email));
   }
 
-  createAddressControls(addresses: any[] = []): FormGroup[] {
-    return addresses.map(address => this.fb.group({
-      city: [address.city || '', Validators.required,Validators.minLength(3)],
-      street: [address.street || '', Validators.required,Validators.maxLength(5)],
-      zip: [address.zip || '', Validators.required,Validators.pattern(/^\d{5}$/)],
-    }));
+  createAddressControls(addresses: {street: string, city: string, zip: string }[] = []): FormGroup[] {
+    const mappedAddress = addresses.map(address => this.createAddressControl(address.city, address.street, address.zip));  
+    return mappedAddress;
   }
 
   get emailControls() {
