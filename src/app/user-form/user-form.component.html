@@ -5,28 +5,35 @@
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" formControlName="name" />
-        <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.errors?.['required']"> 
-          <mat-hint>Username is required</mat-hint>
+        <div *ngIf="userForm.get('name')?.touched&& userForm.get('name')"> 
+          <mat-hint *ngIf="userForm.get('name')?.errors?.['required']">username is required</mat-hint>
         </div>
+        
       </div>
 
       <div formArrayName="emails" class="form-group">
         <label>Emails: <span (click)="addMoreEmail()" class="add-icon">+</span></label>
         <div *ngFor="let emailCtrl of emailControls.controls; let i = index" class="email-input">
           <input type="text" formControlName="{{ i }}" />
-          <div *ngIf="emailCtrl.touched && emailCtrl.errors?.['required']" class="validation-hint">
-            <mat-hint>Email is required</mat-hint>
-          </div>
+          <span *ngIf="i > 0" (click)="deleteEmail(i)" class="delete-icon">-</span>
+          <mat-hint *ngIf="emailCtrl.touched && emailCtrl.errors">
+            <span *ngIf="emailCtrl.errors?.['required']">Email address is required.</span>
+            <span *ngIf="emailCtrl.errors?.['email']">Email address is invalid.</span>
+             <span *ngIf="emailCtrl.errors?.['email']">Email address is invalid.</span>
+          </mat-hint>
         </div>
+        
       </div>
 
       <div formArrayName="phones" class="form-group">
         <label>Phones: <span (click)="addMorePhoneNumbers()" class="add-icon">+</span></label>
         <div *ngFor="let phoneCtrl of phoneControls.controls; let i = index" class="phone-input">
           <input type="text" formControlName="{{ i }}" />
-          <div *ngIf="phoneCtrl.touched && phoneCtrl.errors?.['required']" class="validation-hint">
-            <mat-hint>Phone number is required</mat-hint>
-          </div>
+          <span *ngIf="i > 0" (click)="deletePhone(i)" class="delete-icon">-</span>
+          <mat-hint *ngIf="phoneCtrl.touched && phoneCtrl.errors">
+            <span *ngIf="phoneCtrl.errors?.['required']">Phone number is required.</span>
+            <span *ngIf="phoneCtrl.errors?.['pattern']">Invalid Phone Number.</span>
+          </mat-hint>
         </div>
       </div>
 
@@ -34,31 +41,45 @@
         <label>Addresses: <span (click)="addMoreAddress()" class="add-icon">+</span></label>
         <div *ngFor="let addressCtrl of addressControls; let i = index" [formGroup]="addressCtrl" class="address-input">
           <h1 *ngIf="i > 0" (click)="deleteAddress(i)" class="delete-icon">-</h1>
-          <label for="city">City:</label>
-          <input type="text" id="city" formControlName="city" />
-          <div *ngIf="addressCtrl.get('city')?.touched && addressCtrl.get('city')?.errors?.['required']" class="validation-hint">
-            <mat-hint>City is required</mat-hint>
+          <div *ngFor="let addressCtrl of addressControls; let i = index" [formGroup]="addressCtrl" class="address-input">
+            <h1 *ngIf="i > 0" (click)="deleteAddress(i)" class="delete-icon">-</h1>
+          
+            <label for="city">City:</label>
+            <input type="text" id="city" formControlName="city" required />
+            <mat-hint *ngIf="addressCtrl.get('city')?.touched && addressCtrl.get('city')?.errors">
+              <span *ngIf="addressCtrl.get('city')?.errors?.['required']">City is required.</span>
+              <span *ngIf="addressCtrl.get('city')?.errors?.['minlength']">City name must be at least 3 characters long.</span>
+            </mat-hint>
+          
+            <label for="street">Street:</label>
+            <input type="text" id="street" formControlName="street" required />
+            <mat-hint *ngIf="addressCtrl.get('street')?.touched && addressCtrl.get('street')?.errors">
+              <span *ngIf="addressCtrl.get('street')?.errors?.['required']">Street address is required.</span>
+              <span *ngIf="addressCtrl.get('street')?.errors?.['maxlength']">Street address cannot exceed 12 characters.</span>
+            </mat-hint>
+          
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" formControlName="zip" required />
+            <mat-hint *ngIf="addressCtrl.get('zip')?.touched && addressCtrl.get('zip')?.errors">
+              <span *ngIf="addressCtrl.get('zip')?.errors?.['required']">Zip code is required.</span>
+              <span *ngIf="addressCtrl.get('zip')?.errors?.['pattern']">Invalid zip code format. Please enter a 5-digit code.</span>
+            </mat-hint>
           </div>
-
-          <label for="street">Street:</label>
-          <input type="text" id="street" formControlName="street" />
-          <div *ngIf="addressCtrl.get('street')?.touched && addressCtrl.get('street')?.errors?.['required']" class="validation-hint">
-            <mat-hint>Street is required</mat-hint>
-          </div>
-
-          <label for="zip">Zip:</label>
-          <input type="text" id="zip" formControlName="zip" />
+          
         </div>
       </div>
 
       <div class="form-group" [ngStyle]="{'visibility': ChangeImage ? '' : 'hidden', 'height': ChangeImage ? '' : '5px'}">
+      
+      
+      
         <label for="size">Select Image:</label>
         <input type="file" id="size" formControlName="image" accept=".jpg, .jpeg, .png, .gif" (change)="onFileSelected($event)"/>
       </div>
 
       <mat-dialog-actions>
         <button mat-button color="primary" matDialogClose>Cancel</button>
-        <button mat-button color="accent" type="submit">Submit</button>
+        <button mat-button color="accent" type="submit" [disabled]="userForm.touched && userForm.invalid">Submit</button>
       </mat-dialog-actions>
     </form>
   </div>

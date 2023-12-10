@@ -440,6 +440,55 @@
       "fileSize": 5216,
       "fileType": "image/jpeg",
       "id": "1702133782429"
+    },
+    {
+      "name": "Rick Sanchez",
+      "emails": [
+        "rickMultihez@gmail.com",
+        "sanchez131@yahoo.com"
+      ],
+      "phones": [
+        "2343455434",
+        "6234232452"
+      ],
+      "addresses": [
+        {
+          "city": "osaka ",
+          "street": "213",
+          "zip": "52343"
+        },
+        {
+          "city": "kolkata",
+          "street": "14",
+          "zip": "512432"
+        }
+      ],
+      "image": "C:\\fakepath\\4.jpg",
+      "fileName": "4.jpg",
+      "fileSize": 6947,
+      "fileType": "image/jpeg",
+      "id": "1702205103918"
+    },
+    {
+      "name": "Peter Griffin",
+      "emails": [
+        "Peter@yahoo.com"
+      ],
+      "phones": [
+        "7482294342"
+      ],
+      "addresses": [
+        {
+          "city": "assam",
+          "street": "4",
+          "zip": "4354534"
+        }
+      ],
+      "image": "C:\\fakepath\\9.jpg",
+      "fileName": "9.jpg",
+      "fileSize": 4824,
+      "fileType": "image/jpeg",
+      "id": "1702208646819"
     }
   ]
 }

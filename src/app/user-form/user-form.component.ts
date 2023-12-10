@@ -45,12 +45,12 @@ export class UserFormComponent implements OnInit {
 
   initializeForm() {
     this.userForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], 
-      emails: this.fb.array([''], [Validators.email]),
-      phones: this.fb.array([''], [Validators.pattern(/^\d{10}$/)]), 
-      addresses: this.fb.array([
-        this.createAddressControl('', '', ''),
-      ]),
+      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]],
+      emails: this.fb.array([
+        this.fb.control('', [Validators.required, Validators.email, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)]) ]),
+      
+      phones: this.fb.array([this.fb.control('', [Validators.required, Validators.pattern(/^\d{10}$/)])]),
+      addresses: this.fb.array([this.createAddressControl('', '', '')]),
       image: [null, Validators.required],
       fileName: [''],
       fileSize: [''],
@@ -58,6 +58,13 @@ export class UserFormComponent implements OnInit {
     });
   }
   
+  
+
+  
+
+
+
+
 
 
   onFileSelected(event: any) {
@@ -86,9 +93,9 @@ export class UserFormComponent implements OnInit {
 
   createAddressControls(addresses: any[] = []): FormGroup[] {
     return addresses.map(address => this.fb.group({
-      city: [address.city || '', Validators.required],
-      street: [address.street || '', Validators.required],
-      zip: [address.zip || '', Validators.required],
+      city: [address.city || '', Validators.required,Validators.minLength(3)],
+      street: [address.street || '', Validators.required,Validators.maxLength(5)],
+      zip: [address.zip || '', Validators.required,Validators.pattern(/^\d{5}$/)],
     }));
   }
 
