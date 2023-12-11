@@ -598,14 +598,14 @@
           "zip": "492001"
         },
         {
-          "city": "city 2",
+          "city": "city 4",
           "street": "st2",
           "zip": "492001111"
         }
       ],
       "image": "C:\\fakepath\\6.jpg",
       "fileName": "6.jpg",
-      "fileSize": 5554,
+      "fileSize": 23,
       "fileType": "image/jpeg",
       "id": "1702216249173"
     }

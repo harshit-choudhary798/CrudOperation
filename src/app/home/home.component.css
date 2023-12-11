@@ -1,7 +1,19 @@
 /* Overall table styling */
 .custom-mat-table {
-  /* width: 80%;   width: 80%;  */
-  width: 80%;
+  /* width: 80%; */
+   width: 1300px;
+  /* margin-top: 20px; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  
+  overflow-x: auto !important;
+}
+
+.table-container {
+  overflow-x: auto !important;
+  
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -9,13 +21,23 @@
   margin: 0 auto;
 }
 
-.table-container{
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
+
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: black; 
+  width: 12px; 
 }
+
+
+.table-container {
+  scrollbar-color: white; 
+  scrollbar-width: 12px; 
+}
+
+
+
+
+
 /* Header cell styling */
 .custom-header-cell {
   /* background-color: #333; */
@@ -141,7 +163,8 @@ mat-table{
 
 mat-paginator {
   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-  width: 80%;
+  /* width: 80%; */
+  width: 1300px;
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
