@@ -9,6 +9,7 @@ import { UserFormComponent } from '../user-form/user-form.component';
 import { Router } from '@angular/router';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PersonalDetailsComponent } from '../personal-details/personal-details.component';
+import { zip } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -167,7 +168,8 @@ export class HomeComponent implements OnInit {
 
   loggedOut(){
     sessionStorage.clear()
-    this.router.navigate(['/login'])
+    // this.router.navigate(['/login'])
+    window.location.reload()
   }
 
   downloadDetails(element: any) {
@@ -181,5 +183,10 @@ export class HomeComponent implements OnInit {
 
       console.log('Dialog closed with result:', result);
     });
+  }
+
+
+  addressTooltip(address:{city:string,street:string,zip:string}){
+    return `${address.city}  ${address.street } ${address.zip}`
   }
 }

@@ -127,7 +127,7 @@ export class UserFormComponent implements OnInit {
   createAddressControl(city: string, street: string, zip: string): FormGroup {
     return this.fb.group({
       city: [city, [Validators.required,this.ShouldNotContainNumber(),Validators.maxLength(20)]],
-      street: [street,Validators.maxLength(50)],
+      street: [street,Validators.maxLength(20)],
       zip: [zip, [Validators.required,Validators.pattern(/^[0-9]{6}$/),]],
     });
   }

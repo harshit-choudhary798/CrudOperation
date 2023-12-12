@@ -65,7 +65,7 @@
           
 
 
-            <label for="zip">Zip <Code></Code></label>
+            <label for="zip">Zip*<Code></Code></label>
             <input type="text" id="zip" formControlName="zip" [ngStyle]="{ 'border': addressCtrl.get('zip')?.invalid && addressCtrl.get('zip')?.touched ? '1px solid red' : '' }" />
             <mat-hint *ngIf="addressCtrl.get('zip')?.touched && addressCtrl.get('zip')?.errors">
               <span *ngIf="addressCtrl.get('zip')?.errors?.['required']">Zip-code is required.</span>

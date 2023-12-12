@@ -64,7 +64,8 @@
       <mat-cell *matCellDef="let element" class="custom-cell">
         <div class="address-container custom-list">
           <ng-container *ngFor="let address of element.addresses">
-            <div class="address-item">
+            <div class="address-item"  [matTooltip]="addressTooltip(address)" matTooltipPosition="above">
+
               <span class="city">{{ address.city }}</span>,
               <span class="street">{{ address.street }}</span>,
               <span class="zip">{{ address.zip }}</span>
