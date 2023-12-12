@@ -1,3 +1,4 @@
+
 <div class="user-profile">
   <div class="image-container">
     <img [src]="Filepath" alt="User Image" class="user-image">
@@ -6,7 +7,6 @@
     <h2 class="user-name">{{ details.name }}</h2>
 
     <div class="user-details">
-      <!-- Emails List -->
       <div class="details-section">
         <h3 class="details-header">Emails</h3>
         <mat-list class="details-list">
@@ -16,35 +16,31 @@
         </mat-list>
       </div>
 
-      <!-- Phones List -->
       <div class="details-section">
         <h3 class="details-header">Phones</h3>
         <mat-list class="details-list">
-          <mat-list-item *ngFor="let phone of details.phones;index as i">
-            <span mat-line><strong>Phone No. {{i+1}} : </strong> {{ phone }}</span>
+          <mat-list-item *ngFor="let phone of details.phones; index as i">
+            <span mat-line><span>Phone No. {{ i + 1 }} :</span> {{ phone }}</span>
           </mat-list-item>
         </mat-list>
       </div>
 
-      <!-- Addresses List -->
       <div class="details-section">
         <h3 class="details-header">Addresses</h3>
         <mat-list class="details-list">
-          <mat-list-item *ngFor="let address of details.addresses;index as i">
-            <span mat-line><strong>Address {{i+1}}</strong> {{ address.city }}, {{ address.street }}, {{ address.zip }}</span>
+          <mat-list-item *ngFor="let address of details.addresses; index as i">
+            <span mat-line><span>Address {{ i + 1 }}</span> {{ address.city }}, {{ address.street }}, {{ address.zip }}</span>
           </mat-list-item>
         </mat-list>
       </div>
 
-      <div class=" ">
-        <div class="download">
+      <div class="download">
         <h3 class="details-header">Download your Details</h3>
-        <mat-list class="">
+        <mat-list>
           <mat-list-item style="display: flex; justify-content: end; align-items: end;">
             <button mat-raised-button color="primary" (click)="downloadJson()" download>Download <mat-icon>download</mat-icon></button>
           </mat-list-item>
         </mat-list>
-      </div>
       </div>
 
     </div>

@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
         console.log(this.Users);
         console.log(this.Users.length);
   
-        this.serialIndex(this.Users.length);
+        this.serialIndex();
   
         if (this.Users.length > 0) {
           this.Keys = Object.keys(this.Users[0]);
@@ -100,11 +100,10 @@ export class HomeComponent implements OnInit {
   
   serial: any = [];
   
-  serialIndex(index: number) {
-    for (let i = 1; i <= index; i++) {
-      this.serial.push(i);
-    }
+  serialIndex() {
+    this.serial = Array.from({ length: this.Users.length }, (_, i) => i + 1);
   }
+  
   
   
 
@@ -123,6 +122,7 @@ export class HomeComponent implements OnInit {
           // this.dataSource.data=this.Users
 
           this.loadData()
+          this.serialIndex();
         });
       } else {
         console.log('Dialog closed without result');
@@ -130,7 +130,6 @@ export class HomeComponent implements OnInit {
       console.log('Dialog closed. Performing additional actions.');
     });
   }
-
   update(element: any) {
     const UpdatedData={}
    console.log(element)

@@ -1,4 +1,7 @@
 /* Add this to your global styles or component styles */
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Rethink+Sans&display=swap');
+
 .user-profile {
   display: flex;
   margin: 20px;
@@ -15,12 +18,19 @@
 }
 
 .user-image {
-  
   height: auto;
   border-radius: 8px;
   padding: 10px;
-  border: 2 px solid black !important;
+  border: 2px solid black !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: transform 0.3s ease; 
 }
+
+/* .user-image:hover {
+  transform: scale(2);
+  box-sizing: border-box;
+} */
+
 
 .details-container {
   flex: 1;
@@ -28,7 +38,7 @@
 
 .user-name {
   font-size: 24px;
-  font-weight: bold;
+  font-family: 'Rethink Sans', sans-serif;
   margin-bottom: 10px;
   text-align: center;
 
@@ -41,7 +51,8 @@
 
 .details-header {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 800;
+  font-family: 'Rethink Sans', sans-serif;
   margin-bottom: 10px;
 }
 
