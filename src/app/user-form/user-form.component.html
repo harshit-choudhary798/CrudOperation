@@ -2,72 +2,85 @@
   <h2 mat-dialog-title>User Information</h2>
   <div mat-dialog-content class="form-content">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" formControlName="name" />
+      <div class="form-group" >
+        <label for="name">Name*</label>
+        <input type="text" id="name"  [ngStyle]="{ 'border': userForm.get('name')?.invalid && userForm.get('name')?.touched ? '1px solid red' : '' }" formControlName="name" />
         <div *ngIf="userForm.get('name')?.touched&& userForm.get('name')"> 
           <mat-hint *ngIf="userForm.get('name')?.errors?.['required']">username is required</mat-hint>
+          <mat-hint *ngIf="userForm.get('name')?.errors?.['maxlength']">Exceeded maxlength 15</mat-hint>
+          <mat-hint *ngIf="userForm.get('name')?.errors?.['ShouldNotContainNumber']">No Numbers Accepted</mat-hint>
         </div>
         
       </div>
 
       <div formArrayName="emails" class="form-group">
-        <label>Emails: <span (click)="addMoreEmail()" class="add-icon">+</span></label>
+        <label>Emails* <span (click)="addMoreEmail()" class="add-icon">+</span></label>
         <div *ngFor="let emailCtrl of emailControls.controls; let i = index" class="email-input">
-          <input type="text" formControlName="{{ i }}" />
+          <input type="text" [ngStyle]="{ 'border': emailCtrl?.invalid && emailCtrl?.touched ? '1px solid red' : '' }" formControlName="{{ i }}" />
           <span *ngIf="i > 0" (click)="deleteEmail(i)" class="delete-icon">-</span>
           <mat-hint *ngIf="emailCtrl.touched && emailCtrl.errors">
-            <span *ngIf="emailCtrl.errors?.['required']">Email address is required.</span>
-            <span *ngIf="emailCtrl.errors?.['email']">Email address is invalid.</span>
-             <span *ngIf="emailCtrl.errors?.['email']">Email address is invalid.</span>
+            <span *ngIf="emailCtrl.errors?.['required']">Email is required.</span>
+            <span *ngIf="emailCtrl.errors?.['email']">Email is invalid.</span>
+             
           </mat-hint>
         </div>
         
       </div>
 
       <div formArrayName="phones" class="form-group">
-        <label>Phones: <span (click)="addMorePhoneNumbers()" class="add-icon">+</span></label>
+        <label>Phones* <span (click)="addMorePhoneNumbers()" class="add-icon">+</span></label>
         <div *ngFor="let phoneCtrl of phoneControls.controls; let i = index" class="phone-input">
-          <input type="text" formControlName="{{ i }}" />
+          <input type="text"  [ngStyle]="{ 'border': phoneCtrl?.invalid && phoneCtrl?.touched ? '1px solid red' : '' }" formControlName="{{ i }}" />
           <span *ngIf="i > 0" (click)="deletePhone(i)" class="delete-icon">-</span>
           <mat-hint *ngIf="phoneCtrl.touched && phoneCtrl.errors">
-            <span *ngIf="phoneCtrl.errors?.['required']">Phone number is required.</span>
-            <span *ngIf="phoneCtrl.errors?.['pattern']">Invalid Phone Number.</span>
+            <span *ngIf="phoneCtrl.errors?.['required']">Phone is required.</span>
+            <span *ngIf="phoneCtrl.errors?.['pattern']">Invalid Phone No.</span>
           </mat-hint>
         </div>
       </div>
 
       <div formArrayName="addresses" class="form-group">
-        <label>Addresses: <span (click)="addMoreAddress()" class="add-icon">+</span></label>
+        <label>Addresses <span (click)="addMoreAddress()" class="add-icon">+</span></label>
         <div *ngFor="let addressCtrl of addressControls; let i = index" [formGroup]="addressCtrl" class="address-input">
           <h1 *ngIf="i > 0" (click)="deleteAddress(i)" class="delete-icon">-</h1>
+          
           <div *ngFor="let addressCtrl of addressControls; let i = index" [formGroup]="addressCtrl" class="address-input">
             <h1 *ngIf="i > 0" (click)="deleteAddress(i)" class="delete-icon">-</h1>
           
-            <label for="city">City:</label>
-            <input type="text" id="city" formControlName="city" required />
+            <label for="city">City*</label>
+            <input type="text" id="city" formControlName="city" [ngStyle]="{ 'border': addressCtrl.get('city')?.invalid && addressCtrl.get('city')?.touched ? '1px solid red' : '' }" />
             <mat-hint *ngIf="addressCtrl.get('city')?.touched && addressCtrl.get('city')?.errors">
-              <span *ngIf="addressCtrl.get('city')?.errors?.['required']">City is required.</span>
-              <span *ngIf="addressCtrl.get('city')?.errors?.['minlength']">City name must be at least 3 characters long.</span>
+              <span *ngIf="addressCtrl.get('city')?.errors?.['required']">City is required.</span>   
+              <span *ngIf="addressCtrl.get('city')?.errors?.['ShouldNotContainNumber']" style="display: block;"> No Numbers Accepted</span>
+              <span *ngIf="addressCtrl.get('city')?.errors?.['maxlength']" style="display: block;">Reached maximum length</span>
+
             </mat-hint>
           
-            <label for="street">Street:</label>
-            <input type="text" id="street" formControlName="street" required />
+            <label for="street">Street</label>
+            <input type="text" id="street" formControlName="street" [ngStyle]="{ 'border': addressCtrl.get('street')?.invalid && addressCtrl.get('street')?.touched ? '1px solid red' : '' }" />
+            
             <mat-hint *ngIf="addressCtrl.get('street')?.touched && addressCtrl.get('street')?.errors">
-              <span *ngIf="addressCtrl.get('street')?.errors?.['required']">Street address is required.</span>
-              <span *ngIf="addressCtrl.get('street')?.errors?.['maxlength']">Street address cannot exceed 12 characters.</span>
+              <span *ngIf="addressCtrl.get('street')?.errors?.['maxlength']" style="display: block;">Reached maximum length</span>
             </mat-hint>
           
-            <label for="zip">Zip Code:</label>
-            <input type="text" id="zip" formControlName="zip" required />
+
+
+            <label for="zip">Zip <Code></Code></label>
+            <input type="text" id="zip" formControlName="zip" [ngStyle]="{ 'border': addressCtrl.get('zip')?.invalid && addressCtrl.get('zip')?.touched ? '1px solid red' : '' }" />
             <mat-hint *ngIf="addressCtrl.get('zip')?.touched && addressCtrl.get('zip')?.errors">
-              <span *ngIf="addressCtrl.get('zip')?.errors?.['required']">Zip code is required.</span>
-              <span *ngIf="addressCtrl.get('zip')?.errors?.['pattern']">Invalid zip code format. Please enter a 5-digit code.</span>
+              <span *ngIf="addressCtrl.get('zip')?.errors?.['required']">Zip-code is required.</span>
+              <span *ngIf="addressCtrl.get('zip')?.errors?.['pattern']">
+                Enter a 6-digit code.
+              </span>
+              
             </mat-hint>
           </div>
           
         </div>
       </div>
+
+
+      
 
       <div class="form-group" [ngStyle]="{'visibility': ChangeImage ? '' : 'hidden', 'height': ChangeImage ? '' : '5px'}">
       
@@ -78,8 +91,8 @@
       </div>
 
       <mat-dialog-actions>
-        <button mat-button color="primary" matDialogClose>Cancel</button>
-        <button mat-button color="accent" type="submit" [disabled]="userForm.touched && userForm.invalid">Submit</button>
+        <button mat-raised-button color="primary" matDialogClose>Cancel</button>
+        <button mat-raised-button color="accent" type="submit" >Submit</button>
       </mat-dialog-actions>
     </form>
   </div>

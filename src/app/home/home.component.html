@@ -15,13 +15,16 @@
   </div>
 <div class="table-container">
   <mat-table [dataSource]="dataSource" class="custom-mat-table">
-    <!-- Columns definitions ... -->
 
- 
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef class="custom-header-cell">ID</mat-header-cell>
-      <mat-cell *matCellDef="let element" class="custom-cell">{{ element.id }}</mat-cell>
-    </ng-container>
+<!-- Columns definitions ... -->
+
+
+<ng-container matColumnDef="serial">
+  <mat-header-cell *matHeaderCellDef class="custom-header-cell">No.</mat-header-cell>
+  <mat-cell *matCellDef="let element" class="custom-cell">{{ element.serialNumber }}</mat-cell>
+</ng-container>
+
+    
 
  
     <ng-container matColumnDef="name">

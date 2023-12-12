@@ -30,30 +30,41 @@ export class HomeComponent implements OnInit {
     this.loadData();
   }
 
+
+
   loadData() {
     this.details.getData().subscribe(
       (response: any) => {
         this.Users = response;
         console.log(this.Users);
-
+        console.log(this.Users.length);
+  
+        this.serialIndex(this.Users.length);
+  
         if (this.Users.length > 0) {
-          this.Keys= Object.keys(this.Users[0]);
-
+          this.Keys = Object.keys(this.Users[0]);
+  
           const idIndex = this.Keys.indexOf('id');
           if (idIndex !== -1) {
             this.Keys.splice(idIndex, 1);
           }
-
+  
+          // Add "serial" to the Keys array at index 1
+          this.Keys.splice(0, 0, 'serial');
+  
+          // Combine serial numbers with the original Users array
+          this.Users = this.Users.map((user, index) => ({ ...user, serialNumber: this.serial[index] }));
+  
           this.dataSource = new MatTableDataSource(this.Users);
-
+  
           if (this.paginator) {
             this.dataSource.paginator = this.paginator;
           }
-
+  
           if (!this.Keys.includes('actions')) {
             this.Keys.push('actions');
           }
-
+  
           console.log(this.Keys);
         }
       },
@@ -62,6 +73,16 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+  
+  serial: any = [];
+  
+  serialIndex(index: number) {
+    for (let i = 1; i <= index; i++) {
+      this.serial.push(i);
+    }
+  }
+  
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -109,10 +130,14 @@ export class HomeComponent implements OnInit {
 
   deleteData(element: any) {
 
-    this.details.deleteData(element.id).subscribe((res)=>{
-      console.log(res)
-    })
-    this.loadData()
+    if(confirm('are you sure')){
+      this.details.deleteData(element.id).subscribe((res)=>{
+        console.log(res)
+      })
+      this.loadData()
+    }
+
+
 
   }
 

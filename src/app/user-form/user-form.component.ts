@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray, AbstractControl, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, AbstractControl, FormControl, ValidatorFn, ValidationErrors } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -46,11 +46,20 @@ export class UserFormComponent implements OnInit {
 
   initializeForm() {
     this.userForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]],
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(15),
+          this.ShouldNotContainNumber()
+        ]
+      ],
       emails: this.fb.array([
-        this.fb.control('', [Validators.required, Validators.email, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)]) ]),
-      
-      phones: this.fb.array([this.fb.control('', [Validators.required, Validators.pattern(/^\d{10}$/)])]),
+        this.fb.control('', [Validators.required, Validators.email])
+      ]),
+      phones: this.fb.array([
+        this.fb.control('', [Validators.required, Validators.pattern(/^\d{10}$/)])
+      ]),
       addresses: this.fb.array([this.createAddressControl('', '', '')]),
       image: [null],
       fileName: [''],
@@ -58,6 +67,21 @@ export class UserFormComponent implements OnInit {
       fileType: [''],
     });
   }
+  
+  ShouldNotContainNumber(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value: string = control.value;
+  
+      if (/\d/.test(value)) {
+        
+        return { ShouldNotContainNumber: true };
+      }
+  
+      
+      return null;
+    };
+  }
+  
 
   onFileSelected(event: any) {
     console.log('file name:', event.target.files[0].name);
@@ -102,9 +126,9 @@ export class UserFormComponent implements OnInit {
 
   createAddressControl(city: string, street: string, zip: string): FormGroup {
     return this.fb.group({
-      city: [city, Validators.required],
-      street: [street, Validators.required],
-      zip: [zip, Validators.required],
+      city: [city, [Validators.required,this.ShouldNotContainNumber(),Validators.maxLength(12)]],
+      street: [street,Validators.maxLength(4)],
+      zip: [zip, [Validators.required,Validators.pattern(/^[0-9]{6}$/),]],
     });
   }
 
@@ -120,7 +144,7 @@ export class UserFormComponent implements OnInit {
   
   
   addMoreEmail() {
-    const newEmailControl = this.fb.control('', Validators.email);
+    const newEmailControl = this.fb.control('', [Validators.required, Validators.email]);
     this.emailControls.push(newEmailControl);
   }
 
@@ -143,6 +167,10 @@ export class UserFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.userForm);
-    this.dialogRef.close(this.userForm.value);
+    if(this.userForm.valid){
+      this.dialogRef.close(this.userForm.value);
+    }else{
+      this.userForm.markAllAsTouched()
+    }
   }
 }

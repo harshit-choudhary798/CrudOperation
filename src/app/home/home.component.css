@@ -106,10 +106,15 @@ mat-icon-button[color="warn"]:last-child mat-icon {
 .mat-column-addresses {
   max-width: 25%;
   overflow: hidden;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   text-decoration: ellipse !important;
   
 }
+
+
+
+
+
 .mat-column-addresses,
 .mat-column-emails {
   
@@ -134,12 +139,20 @@ mat-icon-button[color="warn"]:last-child mat-icon {
   max-width: 19%;
 }
 
-.mat-column-name, .mat-column-phones, .mat-column-image{
-  max-width: 11% !important;
+.mat-column-serial{
+  max-width:2% !important;
 }
 
 
-.mat-column-name,
+
+.mat-column-name, .mat-column-phones, .mat-column-image{
+  max-width: 11% !important;
+}
+.mat-column-name{
+  max-width: 11%;
+}
+
+
 .mat-column-phones,
 .mat-column-image
 {
@@ -242,4 +255,8 @@ mat-table{
 
 .action-cell{
   display: flex;
+}
+
+.mat-column-name{
+  max-width: 11% !important;
 }
