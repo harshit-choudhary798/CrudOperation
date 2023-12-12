@@ -31,10 +31,13 @@ export class HomeComponent implements OnInit {
   }
 
 
+// Example MatTable column definition in your component
+
 
   loadData() {
     this.details.getData().subscribe(
       (response: any) => {
+        
         this.Users = response;
         console.log(this.Users);
         console.log(this.Users.length);
@@ -48,6 +51,23 @@ export class HomeComponent implements OnInit {
           if (idIndex !== -1) {
             this.Keys.splice(idIndex, 1);
           }
+          
+          
+          if (this.Keys.indexOf('fileName') !== -1) {
+            this.Keys.splice(this.Keys.indexOf('fileName'), 1);
+          }
+
+                    
+          if (this.Keys.indexOf('fileSize') !== -1) {
+            this.Keys.splice(this.Keys.indexOf('fileSize'), 1);
+          }
+
+          if (this.Keys.indexOf('fileType') !== -1) {
+            this.Keys.splice(this.Keys.indexOf('fileType'), 1);
+          }
+
+          
+
   
           // Add "serial" to the Keys array at index 1
           this.Keys.splice(0, 0, 'serial');
@@ -64,7 +84,10 @@ export class HomeComponent implements OnInit {
           if (!this.Keys.includes('actions')) {
             this.Keys.push('actions');
           }
-  
+
+          // if (!this.Keys.includes('fileName')) {
+          //   this.Keys.push('fileName');
+          // }
           console.log(this.Keys);
         }
       },

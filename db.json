@@ -1,53 +1,20 @@
 {
   "users": [
     {
-      "name": "Harshit",
+      "name": "Xavier Amber",
       "emails": [
-        "harshit184007@gmail.com",
-        "p.patel@example.org"
-      ],
-      "phones": [
-        "87654-21098",
-        "76543-10987"
-      ],
-      "addresses": [
-        {
-          "city": "Ahmedabad",
-          "street": "789 PQR Street",
-          "zip": "380001"
-        },
-        {
-          "city": "Chennai",
-          "street": "101 LMN Avenue",
-          "zip": "600001"
-        }
-      ],
-      "image": {
-        "size": "200x200",
-        "file_size": "55KB"
-      },
-      "id": "2"
-    },
-    {
-      "name": "Aoi2",
-      "emails": [
-        "aoi@aoi.com",
-        "aoi2@aoi2.com"
+        "Xavier@aoi.com",
+        "Amber@aoi2.com"
       ],
       "phones": [
         "1234567899",
-        "1234567899"
+        "1412321312"
       ],
       "addresses": [
         {
-          "city": "city1",
-          "street": "street1",
+          "city": "city one",
+          "street": "st 12 london ",
           "zip": "492001"
-        },
-        {
-          "city": "city 4",
-          "street": "st2",
-          "zip": "492001111"
         }
       ],
       "image": "C:\\fakepath\\6.jpg",
